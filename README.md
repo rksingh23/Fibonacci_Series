@@ -6,7 +6,7 @@
 You can copy this using this command:
 
 ```bash
-git clone https://github.com/rksingh23/Find_av.git
+git clone https://github.com/rksingh23/Find_average.git
 ```
 
 ### Run main:
