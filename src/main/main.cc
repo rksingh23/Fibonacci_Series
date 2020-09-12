@@ -1,14 +1,32 @@
 #include "src/lib/solution.h"
 #include <iostream>
+#include<vector>
 
 int main() {
   Solution solution;
-  std::vector<int> inputs = {1, 2, 3, 4};
-  std::cout << "inputs: {1, 2, 3, 4}, output: " << solution.FindAverageRecursive(inputs)
-            << std::endl;
+  int num=5;
 
-  inputs = {};
-  std::cout << "inputs: {}, output: " << solution.FindAverageRecursive(inputs) << std::endl;
+  std::cout << "Recursive Prime result for "<<num<< std::endl;
+  for (auto n:solution.FindPrimeRecursive(num)){
+    std::cout<<n<<std::endl;
+  }
+
+  std::cout << "Seive Prime result for "<<num<< std::endl;
+  for (auto n:solution.Prime_SieveOfEratosthenes(num)){
+    std::cout<<n<<std::endl;
+  }
+
+  num=-1;
+
+  std::cout << "Recursive Prime result for "<<num<< std::endl;
+  for (auto n:solution.FindPrimeRecursive(num)){
+    std::cout<<n<<std::endl;
+  }
+
+  std::cout << "Seive Prime result for "<<num<< std::endl;
+  for (auto n:solution.Prime_SieveOfEratosthenes(num)){
+    std::cout<<n<<std::endl;
+  }
 
   return 0;
 }

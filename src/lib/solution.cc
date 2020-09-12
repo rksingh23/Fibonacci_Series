@@ -1,33 +1,66 @@
 #include "solution.h"
 #include <iostream>
+#include <bits/stdc++.h>
 
-double Solution::FindAverage(std::vector<int> &inputs){
-  if (inputs.size() == 0){
+
+std::vector<int> Solution::Prime_SieveOfEratosthenes(int &num) 
+{ 
+  std::vector<int> result;
+  std::vector<bool> visited(num+1,false); //Creates a boolean array visited, having size (o to n), all initialized as false.
+
+  if (num<=0)
+  {
+      return {-1};
+  }
+  else
+  {
+  for(int i=2;i<=num;i++)
+  {
+    if(!visited[i]) // if any number is not visited, it is a prime number
+    {
+      result.push_back(i); //add them to the result vector
+      for(int j=i+i; j<=num; j+=i)
+      {
+        visited[j]=true; //all the multiples of that number are non prime, hence invalidate them.
+      }
+    }
+  }
+  return result;
+  }
+}
+
+
+
+
+std::vector<int> Solution::FindPrimeRecursive(int &num)
+{
+  std::vector<int> result;
+  if (num<=0)
+  {
+      return {-1};
+  }
+  else
+  {
+      for(int i=2;i<=num;i++)
+      {
+        Solution::globalChk = i/2;
+        if(isPrime(i))
+            result.push_back(i);
+      }
+  }
+  return result;
+}
+
+
+bool Solution::isPrime(int &num){
+  if(globalChk==1){
+    return 1;
+  }else{
+    if(num%globalChk==0) {
       return 0;
+    } else {
+      globalChk = globalChk-1;
+      isPrime(num);
+    }
   }
-
-  double sum=0;
-  for (auto n : inputs) {
-    sum+=n;
-  }
-  return (sum/(inputs.size()));
-}
-
-double Solution::FindAverageRecursive(std::vector<int> &inputs) {
-  if (inputs.size() == 0) {
-    return -1;
-  }
-  return FindAverageRecursiveAux(inputs, 0, inputs.size());
-}
-
-double Solution::FindAverageRecursiveAux(std::vector<int> &inputs, int start_index, int length) {
-  if (start_index == (length - 1)) {
-    return inputs[start_index];
-  }
-
-  if (start_index==0){
-    return((inputs[0]+FindAverageRecursiveAux(inputs,start_index+1,length))/length);
-  }
-
-return (inputs[start_index]+FindAverageRecursiveAux(inputs,start_index+1,length));
 }

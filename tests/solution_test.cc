@@ -2,30 +2,96 @@
 #include "gtest/gtest.h"
 #include <vector>
 
-TEST(FindAverageTest, HandlesConsecutiveNumbers) {
+
+
+TEST(FindPrimeTest, HandlesPositiveNumberSeive) {
   Solution solution;
-  std::vector<int> inputs = {1, 2, 3, 4};
-  EXPECT_EQ(solution.FindAverage(inputs), 2.5);
-  EXPECT_EQ(solution.FindAverageRecursive(inputs), 2.5);
+
+  int num=5;
+  std::vector<int> vect1{2,3,5};
+  std::vector<int> cmp;
+  for (auto n:solution.Prime_SieveOfEratosthenes(num)){
+    cmp.push_back (n);
+  }
+  ASSERT_EQ(cmp.size(), vect1.size()) << "Vectors x and y are of unequal length";
+  for (unsigned int i = 0; i < vect1.size(); ++i){
+    EXPECT_EQ(cmp[i],vect1[i]);
+  } 
 }
 
-TEST(FindAverageTest, HandlesConsecutiveNumbersOddLength) {
+TEST(FindPrimeTest, HandlesPositiveNumberRecursive) {
   Solution solution;
-  std::vector<int> inputs = {1, 2, 3, 4, -1};
-  EXPECT_EQ(solution.FindAverage(inputs), 1.8);
-  EXPECT_EQ(solution.FindAverageRecursive(inputs), 1.8);
+
+  int num=5;
+  std::vector<int> vect1{2,3,5};
+  std::vector<int> cmp;
+  for (auto n:solution.FindPrimeRecursive(num)){
+    cmp.push_back (n);
+  }
+  ASSERT_EQ(cmp.size(), vect1.size()) << "Vectors x and y are of unequal length";
+  for (unsigned int i = 0; i < vect1.size(); ++i){
+    EXPECT_EQ(cmp[i],vect1[i]);
+  } 
 }
 
-TEST(FindAverageTest, HandlesSizeOne) {
+
+TEST(FindPrimeTest, HandlesNegativeNumberSeive) {
   Solution solution;
-  std::vector<int> inputs = {2};
-  EXPECT_EQ(solution.FindAverage(inputs), 2);
-  EXPECT_EQ(solution.FindAverageRecursive(inputs), 2);
+
+  int num=-1;
+  std::vector<int> vect1{-1};
+  std::vector<int> cmp;
+  for (auto n:solution.Prime_SieveOfEratosthenes(num)){
+    cmp.push_back (n);
+  }
+  ASSERT_EQ(cmp.size(), vect1.size()) << "Vectors x and y are of unequal length";
+  for (unsigned int i = 0; i < vect1.size(); ++i){
+    EXPECT_EQ(cmp[i],vect1[i]);
+  } 
 }
 
-TEST(FindAverageTest, HandlesEmptyVector) {
+TEST(FindPrimeTest, HandlesNegativeNumberRecursive) {
   Solution solution;
-  std::vector<int> inputs = {};
-  EXPECT_EQ(solution.FindAverage(inputs), 0);
-  EXPECT_EQ(solution.FindAverageRecursive(inputs), -1);
+
+  int num=-1;
+  std::vector<int> vect1{-1};
+  std::vector<int> cmp;
+  for (auto n:solution.FindPrimeRecursive(num)){
+    cmp.push_back (n);
+  }
+  ASSERT_EQ(cmp.size(), vect1.size()) << "Vectors x and y are of unequal length";
+  for (unsigned int i = 0; i < vect1.size(); ++i){
+    EXPECT_EQ(cmp[i],vect1[i]);
+  } 
+}
+
+
+TEST(FindPrimeTest, HandlesZeroSeive) {
+  Solution solution;
+
+  int num=0;
+  std::vector<int> vect1{-1};
+  std::vector<int> cmp;
+  for (auto n:solution.Prime_SieveOfEratosthenes(num)){
+    cmp.push_back (n);
+  }
+  ASSERT_EQ(cmp.size(), vect1.size()) << "Vectors x and y are of unequal length";
+  for (unsigned int i = 0; i < vect1.size(); ++i){
+    EXPECT_EQ(cmp[i],vect1[i]);
+  } 
+}
+
+TEST(FindPrimeTest, HandlesZerorRecursive) {
+  Solution solution;
+
+  int num=0;
+  std::vector<int> vect1{-1};
+  std::vector<int> cmp;
+  for (auto n:solution.FindPrimeRecursive(num)){
+    cmp.push_back (n);
+  }
+  ASSERT_EQ(cmp.size(), vect1.size()) << "Vectors x and y are of unequal length";
+  for (unsigned int i = 0; i < vect1.size(); ++i){
+    EXPECT_EQ(cmp[i],vect1[i]);
+  } 
 }

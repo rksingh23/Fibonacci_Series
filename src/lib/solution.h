@@ -6,11 +6,13 @@
 
 class Solution {
 public:
-  double FindAverage(std::vector<int> &inputs);
-  double FindAverageRecursive(std::vector<int> &inputs);
+  
+  std::vector<int> FindPrimeRecursive(int &num);
+  std::vector<int> Prime_SieveOfEratosthenes(int &num); 
+  int globalChk;  
+  bool isPrime(int &num); 
 
-private:
-  double FindAverageRecursiveAux(std::vector<int> &inputs, int start_index, int length);
+//private:
 };
 
 #endif

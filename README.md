@@ -1,12 +1,12 @@
-# Find Max
-> Finds the average value in a C++ Vector using recursive and non-recursive Methods
+# Prime_Recursive
+> Finds the Prime number of all numbers less than the num, in a C++ using *Sieve of Eratosthenes algorithm, i.e Non-Recursive method as well as recursive Method.
 
 ## Installation
 
 You can copy this using this command:
 
 ```bash
-git clone https://github.com/ourarash/find_avg.git
+git clone https://github.com/rksingh23/Prime_Recursive.git
 ```
 
 ### Run main:
