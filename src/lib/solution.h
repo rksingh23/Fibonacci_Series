@@ -6,11 +6,9 @@
 
 class Solution {
 public:
-  
-  std::vector<int> FindPrimeRecursive(int &num);
-  std::vector<int> Prime_SieveOfEratosthenes(int &num); 
-  int globalChk;  
-  bool isPrime(int &num); 
+  int Fibonacci_MEMOIZATION(int num);
+  std::vector<int> Fibonacci_Non_Recursive(int &num);
+  int Fibonacci_Tail_Recursion(int n,int prev, int curr); 
 
 //private:
 };

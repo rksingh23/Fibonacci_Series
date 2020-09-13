@@ -1,12 +1,15 @@
-# Prime_Recursive
-> Finds the Prime number of all numbers less than the num, in a C++ using *Sieve of Eratosthenes algorithm, i.e Non-Recursive method as well as recursive Method.
+# Fibonacci_Series
+> Accept a Limit n as the input of a function's arguments and return the fibonacci series upto the value of n using 
+> 1. MEMOIZATION
+> 2. Recursive Tail Method 
+> 3. Non-recursive method. 
 
 ## Installation
 
 You can copy this using this command:
 
 ```bash
-git clone https://github.com/rksingh23/Prime_Recursive.git
+git clone https://github.com/rksingh23/Fibonacci_Series.git
 ```
 
 ### Run main:
